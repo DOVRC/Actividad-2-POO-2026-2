@@ -1,0 +1,15 @@
+@startuml diagrama_objetos
+skinparam shadowing false
+
+title Ejercicio 2.5 - Diagrama de objetos
+
+object "<u>cuenta : CuentaBancaria</u>" as cuenta {
+  nombresTitular = "Pedro"
+  apellidosTitular = "Pérez"
+  numeroCuenta = 123456789
+  tipoCuenta = TipoCuenta.AHORROS
+  saldo = 102000.0
+  porcentajeInteresMensual = 2.0
+}
+
+@enduml

@@ -1,0 +1,44 @@
+@startuml diagrama_objetos
+skinparam shadowing false
+skinparam dpi 130
+
+title Ejercicio 2.4 - Diagrama de objetos
+
+object "<u>figura1 : Circulo</u>" as figura1 {
+  radio = 2
+}
+
+object "<u>figura2 : Rectangulo</u>" as figura2 {
+  base = 1
+  altura = 2
+}
+
+object "<u>figura3 : Cuadrado</u>" as figura3 {
+  lado = 3
+}
+
+object "<u>figura4 : TrianguloRectangulo</u>" as figura4 {
+  base = 3
+  altura = 5
+}
+
+object "<u>figura5 : Rombo</u>" as figura5 {
+  diagonalMayor = 8
+  diagonalMenor = 6
+}
+
+object "<u>figura6 : Trapecio</u>" as figura6 {
+  baseMayor = 10
+  baseMenor = 4
+  altura = 4
+  ladoIzquierdo = 5
+  ladoDerecho = 5
+}
+
+figura1 -[hidden]right- figura2
+figura2 -[hidden]right- figura3
+figura1 -[hidden]down- figura4
+figura4 -[hidden]right- figura5
+figura5 -[hidden]right- figura6
+
+@enduml

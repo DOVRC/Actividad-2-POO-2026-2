@@ -1,0 +1,24 @@
+@startuml diagrama_objetos
+skinparam shadowing false
+
+title Ejercicio 2.1 - Diagrama de objetos
+
+object "<u>p1 : Persona</u>" as p1 {
+  nombre = "Pedro"
+  apellidos = "Pérez"
+  numeroDocumentoIdentidad = "1053121010"
+  anioNacimiento = 1998
+  paisNacimiento = "Colombia"
+  genero = 'H'
+}
+
+object "<u>p2 : Persona</u>" as p2 {
+  nombre = "Luis"
+  apellidos = "León"
+  numeroDocumentoIdentidad = "1053223344"
+  anioNacimiento = 2001
+  paisNacimiento = "Colombia"
+  genero = 'H'
+}
+
+@enduml

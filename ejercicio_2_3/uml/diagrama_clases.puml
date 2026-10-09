@@ -1,0 +1,94 @@
+@startuml diagrama_clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam dpi 140
+hide circle
+
+title Ejercicio 2.3 - Diagrama de clases
+
+class Automovil {
+  {static} ~ VALOR_MULTA : int = 100000
+  {field} ~ marca : String
+  {field} ~ modelo : int
+  {field} ~ motor : int
+  {field} ~ tipoCombustible : TipoCombustible
+  {field} ~ tipoAutomovil : TipoAutomovil
+  {field} ~ numeroPuertas : int
+  {field} ~ cantidadAsientos : int
+  {field} ~ velocidadMaxima : int
+  {field} ~ color : TipoColor
+  {field} ~ velocidadActual : int = 0
+  {field} ~ automatico : boolean
+  {field} ~ cantidadMultas : int = 0
+  {field} ~ totalMultas : int = 0
+  --
+  {method} ~ <<constructor>> Automovil(\n    marca : String,\n    modelo : int,\n    motor : int,\n    tipoCombustible : TipoCombustible,\n    tipoAutomovil : TipoAutomovil,\n    numeroPuertas : int,\n    cantidadAsientos : int,\n    velocidadMaxima : int,\n    color : TipoColor,\n    automatico : boolean)
+  {method} ~ getMarca() : String
+  {method} ~ setMarca(marca : String) : void
+  {method} ~ getModelo() : int
+  {method} ~ setModelo(modelo : int) : void
+  {method} ~ getMotor() : int
+  {method} ~ setMotor(motor : int) : void
+  {method} ~ getTipoCombustible() : TipoCombustible
+  {method} ~ setTipoCombustible(tipoCombustible : TipoCombustible) : void
+  {method} ~ getTipoAutomovil() : TipoAutomovil
+  {method} ~ setTipoAutomovil(tipoAutomovil : TipoAutomovil) : void
+  {method} ~ getNumeroPuertas() : int
+  {method} ~ setNumeroPuertas(numeroPuertas : int) : void
+  {method} ~ getCantidadAsientos() : int
+  {method} ~ setCantidadAsientos(cantidadAsientos : int) : void
+  {method} ~ getVelocidadMaxima() : int
+  {method} ~ setVelocidadMaxima(velocidadMaxima : int) : void
+  {method} ~ getColor() : TipoColor
+  {method} ~ setColor(color : TipoColor) : void
+  {method} ~ getVelocidadActual() : int
+  {method} ~ setVelocidadActual(velocidadActual : int) : void
+  {method} ~ getAutomatico() : boolean
+  {method} ~ setAutomatico(automatico : boolean) : void
+  {method} ~ acelerar(incrementoVelocidad : int) : void
+  {method} ~ desacelerar(decrementoVelocidad : int) : void
+  {method} ~ frenar() : void
+  {method} ~ calcularTiempoLlegada(distancia : int) : double
+  {method} ~ imprimir() : void
+  {method} ~ tieneMultas() : boolean
+  {method} ~ calcularTotalMultas() : int
+}
+
+class TipoCombustible <<enumeration>> {
+  {field} GASOLINA
+  {field} BIOETANOL
+  {field} DIESEL
+  {field} BIODIESEL
+  {field} GAS_NATURAL
+}
+
+class TipoAutomovil <<enumeration>> {
+  {field} CIUDAD
+  {field} SUBCOMPACTO
+  {field} COMPACTO
+  {field} FAMILIAR
+  {field} EJECUTIVO
+  {field} SUV
+}
+
+class TipoColor <<enumeration>> {
+  {field} BLANCO
+  {field} NEGRO
+  {field} ROJO
+  {field} NARANJA
+  {field} AMARILLO
+  {field} VERDE
+  {field} AZUL
+  {field} VIOLETA
+}
+
+class Main {
+  {method} + {static} main(args : String[]) : void
+}
+
+Main ..> Automovil : crea
+Automovil --> TipoCombustible : tipoCombustible
+Automovil --> TipoAutomovil : tipoAutomovil
+Automovil --> TipoColor : color
+
+@enduml

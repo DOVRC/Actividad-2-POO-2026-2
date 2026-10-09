@@ -1,0 +1,23 @@
+@startuml diagrama_objetos
+skinparam shadowing false
+skinparam dpi 140
+
+title Ejercicio 2.3 - Diagrama de objetos
+
+object "<u>auto1 : Automovil</u>" as auto1 {
+  marca = "Ford"
+  modelo = 2018
+  motor = 3
+  tipoCombustible = TipoCombustible.DIESEL
+  tipoAutomovil = TipoAutomovil.EJECUTIVO
+  numeroPuertas = 5
+  cantidadAsientos = 6
+  velocidadMaxima = 250
+  color = TipoColor.NEGRO
+  velocidadActual = 250
+  automatico = true
+  cantidadMultas = 2
+  totalMultas = 200000
+}
+
+@enduml

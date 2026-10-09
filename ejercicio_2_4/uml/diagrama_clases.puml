@@ -1,0 +1,84 @@
+@startuml diagrama_clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam dpi 130
+hide circle
+
+title Ejercicio 2.4 - Diagrama de clases
+
+class PruebaFiguras {
+  {method} + {static} main(args : String[]) : void
+}
+
+class Circulo {
+    {field} ~ radio : int
+    --
+    {method} ~ <<constructor>> Circulo(radio : int)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularPerimetro() : double
+  }
+
+class Rectangulo {
+    {field} ~ base : int
+    {field} ~ altura : int
+    --
+    {method} ~ <<constructor>> Rectangulo(base : int, altura : int)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularPerimetro() : double
+  }
+
+class Cuadrado {
+    {field} ~ lado : int
+    --
+    {method} ~ <<constructor>> Cuadrado(lado : int)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularPerimetro() : double
+  }
+
+class TrianguloRectangulo {
+    {field} ~ base : int
+    {field} ~ altura : int
+    --
+    {method} ~ <<constructor>> TrianguloRectangulo(base : int, altura : int)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularHipotenusa() : double
+    {method} ~ calcularPerimetro() : double
+    {method} ~ determinarTipoTriangulo() : void
+  }
+
+class Rombo {
+    {field} ~ diagonalMayor : double
+    {field} ~ diagonalMenor : double
+    --
+    {method} ~ <<constructor>> Rombo(diagonalMayor : double, diagonalMenor : double)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularPerimetro() : double
+  }
+
+class Trapecio {
+    {field} ~ baseMayor : double
+    {field} ~ baseMenor : double
+    {field} ~ altura : double
+    {field} ~ ladoIzquierdo : double
+    {field} ~ ladoDerecho : double
+    --
+    {method} ~ <<constructor>> Trapecio(\n    baseMayor : double,\n    baseMenor : double,\n    altura : double,\n    ladoIzquierdo : double,\n    ladoDerecho : double)
+    {method} ~ calcularArea() : double
+    {method} ~ calcularPerimetro() : double
+  }
+
+Circulo -[hidden]right- Rectangulo
+Rectangulo -[hidden]right- Cuadrado
+TrianguloRectangulo -[hidden]right- Rombo
+Rombo -[hidden]right- Trapecio
+Circulo -[hidden]down- TrianguloRectangulo
+PruebaFiguras -[hidden]down- Circulo
+
+PruebaFiguras -[dotted,norank]-> Circulo : crea
+PruebaFiguras -[dotted,norank]-> Rectangulo : crea
+PruebaFiguras -[dotted,norank]-> Cuadrado : crea
+PruebaFiguras -[dotted,norank]-> TrianguloRectangulo : crea
+PruebaFiguras -[dotted,norank]-> Rombo : crea
+PruebaFiguras -[dotted,norank]-> Trapecio : crea
+
+@enduml

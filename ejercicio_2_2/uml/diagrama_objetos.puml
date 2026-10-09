@@ -1,0 +1,32 @@
+@startuml diagrama_objetos
+skinparam shadowing false
+
+title Ejercicio 2.2 - Diagrama de objetos
+
+object "<u>p1 : Planeta</u>" as p1 {
+  nombre = "Tierra"
+  cantidadSatelites = 1
+  masa = 5.9736E24
+  volumen = 1.08321E12
+  diametro = 12742
+  distanciaSol = 150000000
+  tipo = TipoPlaneta.TERRESTRE
+  esObservable = true
+  periodoOrbital = 1.0
+  periodoRotacion = 1.0
+}
+
+object "<u>p2 : Planeta</u>" as p2 {
+  nombre = "Júpiter"
+  cantidadSatelites = 79
+  masa = 1.899E27
+  volumen = 1.4313E15
+  diametro = 139820
+  distanciaSol = 750000000
+  tipo = TipoPlaneta.GASEOSO
+  esObservable = true
+  periodoOrbital = 11.86
+  periodoRotacion = 0.4135
+}
+
+@enduml

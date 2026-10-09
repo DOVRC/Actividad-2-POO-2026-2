@@ -1,0 +1,36 @@
+@startuml diagrama_clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+
+title Ejercicio 2.5 - Diagrama de clases
+
+class CuentaBancaria {
+  {field} ~ nombresTitular : String
+  {field} ~ apellidosTitular : String
+  {field} ~ numeroCuenta : int
+  {field} ~ tipoCuenta : TipoCuenta
+  {field} ~ saldo : float = 0
+  {field} ~ porcentajeInteresMensual : float
+  --
+  {method} ~ <<constructor>> CuentaBancaria(\n    nombresTitular : String,\n    apellidosTitular : String,\n    numeroCuenta : int,\n    tipoCuenta : TipoCuenta,\n    porcentajeInteresMensual : float)
+  {method} ~ imprimir() : void
+  {method} ~ consultarSaldo() : void
+  {method} ~ consignar(valor : int) : boolean
+  {method} ~ retirar(valor : int) : boolean
+  {method} ~ aplicarInteresMensual() : void
+}
+
+class TipoCuenta <<enumeration>> {
+  {field} AHORROS
+  {field} CORRIENTE
+}
+
+class Main {
+  {method} + {static} main(args : String[]) : void
+}
+
+Main ..> CuentaBancaria : crea
+CuentaBancaria --> TipoCuenta : tipoCuenta
+
+@enduml

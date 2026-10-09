@@ -1,0 +1,45 @@
+# Archivos compilados de Java
+*.class
+*.jar
+
+# Carpetas de compilacion
+bin/
+build/
+out/
+target/
+dist/
+
+# Archivos temporales
+*.log
+*.tmp
+*.temp
+hs_err_pid*
+replay_pid*
+
+# Configuracion local del editor y de herramientas
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+*.swp
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentos del libro y del curso.
+# Permanecen en la carpeta local docs/, pero no deben publicarse.
+docs/*.pdf
+
+
+# Extracciones temporales del libro
+_book_*/
+**/_book_*/
+
+# Pruebas temporales
+PruebaGrandes.java
+PruebaVelocidadMaxima.java

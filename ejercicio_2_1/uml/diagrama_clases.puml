@@ -1,0 +1,26 @@
+@startuml diagrama_clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+
+title Ejercicio 2.1 - Diagrama de clases
+
+class Persona {
+  {field} ~ nombre : String
+  {field} ~ apellidos : String
+  {field} ~ numeroDocumentoIdentidad : String
+  {field} ~ anioNacimiento : int
+  {field} ~ paisNacimiento : String
+  {field} ~ genero : char
+  --
+  {method} ~ <<constructor>> Persona(\n    nombre : String,\n    apellidos : String,\n    numeroDocumentoIdentidad : String,\n    anioNacimiento : int,\n    paisNacimiento : String,\n    genero : char)
+  {method} ~ imprimir() : void
+}
+
+class Main {
+  {method} + {static} main(args : String[]) : void
+}
+
+Main ..> Persona : crea
+
+@enduml

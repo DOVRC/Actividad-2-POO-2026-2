@@ -1,0 +1,39 @@
+@startuml diagrama_clases
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+
+title Ejercicio 2.2 - Diagrama de clases
+
+class Planeta {
+  {field} ~ nombre : String = null
+  {field} ~ cantidadSatelites : int = 0
+  {field} ~ masa : double = 0
+  {field} ~ volumen : double = 0
+  {field} ~ diametro : int = 0
+  {field} ~ distanciaSol : int = 0
+  {field} ~ tipo : TipoPlaneta
+  {field} ~ esObservable : boolean = false
+  {field} ~ periodoOrbital : double = 0
+  {field} ~ periodoRotacion : double = 0
+  --
+  {method} ~ <<constructor>> Planeta(\n    nombre : String,\n    cantidadSatelites : int,\n    masa : double,\n    volumen : double,\n    diametro : int,\n    distanciaSol : int,\n    tipo : TipoPlaneta,\n    esObservable : boolean,\n    periodoOrbital : double,\n    periodoRotacion : double)
+  {method} ~ imprimir() : void
+  {method} ~ calcularDensidad() : double
+  {method} ~ esPlanetaExterior() : boolean
+}
+
+class TipoPlaneta <<enumeration>> {
+  {field} GASEOSO
+  {field} TERRESTRE
+  {field} ENANO
+}
+
+class Main {
+  {method} + {static} main(args : String[]) : void
+}
+
+Main ..> Planeta : crea
+Planeta --> TipoPlaneta : tipo
+
+@enduml
